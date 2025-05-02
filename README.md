@@ -45,4 +45,3 @@ Se definen estructuras con **herencia**, **composición** e **interfaces**. Debe
     - Definidos en el documento adjunto
     - Deben reflejarse en el diseño
 
-⚠ **Importante**
