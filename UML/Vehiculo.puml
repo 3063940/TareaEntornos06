@@ -1,0 +1,20 @@
+@startuml
+
+abstract class Vehiculo {
+
+-matricula: String
+-marca: String
+-numKms: int
+-fechaMatriculacion:LocalDate
+-descripcion: String
+-precio: double
+-propietario: Persona
++getAnios(): int
++calcularImpuestoCirculacion(): double {abstract}
++calcularRiesgo(experiencia: int): TipoRiesgo
++toString(): String
+
+
+}
+
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+class Deportivo {
+  -potencia: int
+}
+@enduml

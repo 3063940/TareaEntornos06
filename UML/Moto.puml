@@ -1,0 +1,6 @@
+@startuml
+class Moto {
+  -cilindrada: int
+  +calcularImpuestoCirculacion(): double
+}
+@enduml

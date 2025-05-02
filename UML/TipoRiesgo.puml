@@ -1,0 +1,7 @@
+@startuml
+enum TipoRiesgo {
+  BAJO
+  MEDIO
+  ALTO
+}
+@enduml

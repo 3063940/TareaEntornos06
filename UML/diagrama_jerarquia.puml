@@ -1,0 +1,94 @@
+@startuml
+
+skinparam monochrome true
+
+' Enum
+enum TipoRiesgo {
+  BAJO
+  MEDIO
+  ALTO
+}
+
+' Interfaz
+interface Valorable {
+  +calcularDepreciacion(): double
+}
+
+' Clase abstracta
+abstract class Vehiculo {
+  -matricula: String
+  -marca: String
+  -numKms: int
+  -fechaMatriculacion: LocalDate
+  -descripcion: String
+  -precio: double
+  -propietario: Persona
+  +getAnios(): int
+  +calcularImpuestoCirculacion(): double {abstract}
+  +calcularRiesgo(experiencia: int): TipoRiesgo
+  +toString(): String
+}
+
+' Subclases principales
+class Coche {
+  -numPuertas: int
+  +calcularImpuestoCirculacion(): double
+}
+
+class Moto {
+  -cilindrada: int
+  +calcularImpuestoCirculacion(): double
+}
+
+class Camion {
+  -capacidadCarga: double
+  +calcularImpuestoCirculacion(): double
+}
+
+' Subtipos de Coche
+class Sedan {
+  -tipoCarroceria: String
+}
+
+class SUV {
+  -traccion: String
+}
+
+class Deportivo {
+  -potencia: int
+}
+
+' Subtipos de Moto
+class Scooter {
+  -tipoManillar: String
+}
+
+class Deportiva {
+  -tipoCarroceria: String
+}
+
+' Clase Persona
+class Persona {
+  -nombre: String
+  -apellidos: String
+  -DNI: String
+  -añoNacimiento: int
+  -fechaCaducidadCarnet: LocalDate
+  +validarDNI(): boolean
+  +calcularEdad(): int
+}
+
+' Relaciones
+Vehiculo <|.. Coche
+Vehiculo <|.. Moto
+Vehiculo <|.. Camion
+Coche <|.. Sedan
+Coche <|.. SUV
+Coche <|.. Deportivo
+Moto <|.. Scooter
+Moto <|.. Deportiva
+Vehiculo .|> Valorable
+Vehiculo o--> "0..1" Persona : propietario
+Vehiculo --> TipoRiesgo : usa
+
+@enduml

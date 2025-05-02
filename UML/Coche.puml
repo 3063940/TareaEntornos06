@@ -1,0 +1,8 @@
+@startuml
+
+class Coche {
+-numPuertas: int
++calcularImpuestoCircularion(): double
+}
+
+@enduml

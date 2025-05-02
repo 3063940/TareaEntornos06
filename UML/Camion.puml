@@ -1,0 +1,6 @@
+@startuml
+class Camion {
+  -capacidadCarga: double
+  +calcularImpuestoCirculacion(): double
+}
+@enduml

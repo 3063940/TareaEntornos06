@@ -1,0 +1,5 @@
+@startuml
+class Scooter {
+  -tipoManillar: String
+}
+@enduml
